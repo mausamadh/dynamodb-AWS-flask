@@ -13,7 +13,7 @@ dynamodb = boto3.resource('dynamodb',
 
 
 #dynamodb = boto3.resource('dynamodb')
-
+'''
 # Create the DynamoDB table.
 table = dynamodb.create_table(
     TableName='users',
@@ -41,3 +41,14 @@ table.meta.client.get_waiter('table_exists').wait(TableName='users')
 
 # Print out some data about the table.
 print(table.item_count)
+'''
+
+table = dynamodb.Table('users')
+print(table.creation_date_time)
+table.put_item(
+            Item={
+                'name': 'mausam',
+                'email': 'mausam@mausam.com',
+                'password': 'password'
+            }
+        )
