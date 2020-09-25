@@ -1,0 +1,3 @@
+aws_access_key_id = 'ASIAZMDKLBE2SRXNBPUW'
+aws_secret_access_key = 'rQ3xzjI6LNoQTz4ZygnGOCYsn+bprVHqS7vF753z'
+aws_session_token = 'FwoGZXIvYXdzEMj//////////wEaDDXGg29JHySZd/sXCyLaAeD9wym/kswhMO3UDxeVzD2zFe1ZIDvobi4d9C1h3LHT3++45KoyUuoC3bGbBQ0+DUvsI7VbzTaQmvfymHnJM1YwDwdQBhd4NE9tXdAx/xdCTsRKJjK2+L653FaPJaUHjjDtz9B2DyGXy7cjgfdWs2qxJjNH+bTcwSS1OUCPnmRqlFXVC2KN5hak6C1qCxYkjR/jrTFfpjtZT0oNtLh/J10Z96dBo4mH5dKfm3IBAHAOVh4/EjPDoDHp3EbooDZIxnziyo2XcLNZc7/MSS/tNFNGU/G9m6M8++FxKKmltvsFMi211O9Q035U7Ni5LpKY0RoYd1aCHF9uI17B8Abkj/OrC7BPvGLNhw1hPwPdueA='
