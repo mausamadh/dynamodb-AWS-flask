@@ -3,7 +3,7 @@ import boto3
 # Get the service resource.
 
 
-import key_config as keys
+import keys as keys
 
 dynamodb = boto3.resource('dynamodb',
                           aws_access_key_id=keys.aws_access_key_id,

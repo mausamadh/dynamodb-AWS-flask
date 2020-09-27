@@ -14,7 +14,7 @@
 <body>
     <div>
         <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-            <div class="container"><a class="navbar-brand" href="/#" style="color:#aedc8a;">Home</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" href="#" style="color:#aedc8a;">Home</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse" id="navcol-1"><span class="navbar-text actions"> <a class="btn btn-light action-button" role="button" href="{{url_for('login')}}" style="background-color:#aedc8a;">Login</a></span></div>
                 <div
@@ -27,18 +27,11 @@
             <div class="image-holder"></div>
             <form method="post" action = "/signup">
                 <h2 class="text-center"><strong>Create</strong> an account.</h2>
-                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
+                <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name to update"></div>
                 <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-                <div class="form-group">
-                    <div class="form-check">
-                        <label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the license terms.</label>
-                    </div>
-                </div>
                 <div class="form-group">
                 <input type="submit" name="submit" value="Sign up" class="btn btn-primary btn-block" style="background-color:#aedc8a;color:rgb(40,140,38);">
                  </div>
-                <a href="#" class="already">Login if you already have account.</a>
             </form>
         </div>
     </div>

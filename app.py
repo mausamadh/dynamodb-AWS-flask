@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import key_config as keys
+import keys as keys
 import boto3
 from boto3.dynamodb.conditions import Key, Attr
 
@@ -11,8 +11,6 @@ dynamodb = boto3.resource('dynamodb',
                           aws_secret_access_key=keys.aws_secret_access_key,
                           aws_session_token=keys.aws_session_token
                           )
-
-
 
 
 @app.route('/')
@@ -36,7 +34,7 @@ def signup():
                 'password': password
             }
         )
-        msg = "Registration Complete. Please Login to your account !"
+        msg = "Registration Completed!"
 
         return render_template('login.html', msg=msg)
     return render_template('index.html')
@@ -47,8 +45,31 @@ def login():
     return render_template('login.html')
 
 
+@app.route('/update', methods=['post', 'GET'])
+def update():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+
+        table = dynamodb.Table('users')
+
+        table.update_item(
+            key={
+                'email': email
+            },
+            UpdateExpression='SET name = :val1',
+            ExpressionAttributeValues={
+                ':val1': name
+            }
+        )
+        msg = "name updated"
+
+        return render_template('login.html', msg=msg)
+    return render_template('update.html')
+
+
 @app.route('/check', methods=['post'])
-def check():
+def validate():
     if request.method == 'POST':
 
         email = request.form['email']
