@@ -93,5 +93,30 @@ def home():
     return render_template('home.html')
 
 
+@app.route('/delete', methods=['post','GET'])
+def delete():
+    if request.method == 'POST':
+
+        email = request.form['email']
+        password = request.form['password']
+
+        table = dynamodb.Table('users')
+        response = table.query(
+            KeyConditionExpression=Key('email').eq(email)
+        )
+        items = response['Items']
+        name = items[0]['name']
+        print(items[0]['password'])
+        if password == items[0]['password']:
+            table.delete_item(
+                Key={
+                    'email': email
+                }
+            )
+            msg = "User Deleted"
+            return render_template("login.html", msg=msg)
+    return render_template("delete.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
