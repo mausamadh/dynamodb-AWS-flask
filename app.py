@@ -48,21 +48,22 @@ def login():
 @app.route('/update', methods=['post', 'GET'])
 def update():
     if request.method == 'POST':
-        name = request.form['name']
         email = request.form['email']
+        password = request.form['password']
 
         table = dynamodb.Table('users')
 
         table.update_item(
-            key={
+            Key={
                 'email': email
             },
-            UpdateExpression='SET name = :val1',
+            UpdateExpression='SET password = :val1',
             ExpressionAttributeValues={
-                ':val1': name
-            }
+                ':val1': password
+            },
+
         )
-        msg = "name updated"
+        msg = "Password updated"
 
         return render_template('login.html', msg=msg)
     return render_template('update.html')
